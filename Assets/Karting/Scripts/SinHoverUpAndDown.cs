@@ -29,11 +29,14 @@ public class SinHoverUpAndDown : MonoBehaviour
 
     private void Update()
     {
+        // use time to keep the sin result flowing
         float currentSinValue = Mathf.Sin(m_randomizedStartValue + Time.time);
 
         m_updatedPosition.x = transform.position.x;
+        
         m_updatedPosition.y = m_startYposition +
             (m_hoverHeight * currentSinValue * m_hoverSpeed);
+
         m_updatedPosition.z = transform.position.z;
 
         transform.position = m_updatedPosition;
